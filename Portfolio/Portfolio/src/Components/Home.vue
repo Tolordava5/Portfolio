@@ -107,7 +107,40 @@ h1 {
 
 .social button:hover {
   box-shadow: 0 0 10px #A259FF, 0 0 20px #A259FF;
-
+}
+@media  screen and (max-width:600px) {
+  .inforamtion{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+.inforamtion > div:last-child> img {
+  width: 350px;
+  margin: 0 auto;
+  padding: 5px;
+  margin-left: 2px;
+  margin-top: 10px;
+}
+.inforamtion div{
+  padding: 10px;
+}
+.inforamtion h1{
+  font-size: 40px;
+}
+  .inforamtion h3{
+  font-size: 30px;
+}
+#autoWriter {
+  font-size: 30px;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #A259FF;
+  width: fit-content;
+}
+.btns {
+  width: 30px;
+  gap: 10px ;
+}
 }
 </style>
 <script setup>
