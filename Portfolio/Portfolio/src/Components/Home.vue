@@ -1,32 +1,61 @@
 <template>
-  <div class="inforamtion">
-    <!-- first child -->
-    <div>
+  <div class="information">
+    <!-- Left Side -->
+    <div class="text-content">
       <div>
         <h3>Hello, I'm</h3>
         <h1>Giorgi Tolordava</h1>
-        <h2 id="autoWriter">And i am Web Developer...</h2>
+        <h2 id="autoWriter">And I am Web Developer...</h2>
       </div>
       <div class="social">
-        <a href="https://www.facebook.com/giorgi.tolordava.576786"><img src="../assets//Photos/facebook.png" alt=""></a>
-        <a href="https://www.instagram.com/georgetolordava5/"><img src="../assets/Photos/instagram.webp" alt=""></a>
-        <a href="https://github.com/Tolordava5"><img src="../assets/Photos/github.png" alt=""></a>
-        <a href="https://www.linkedin.com/in/george-george-629411258/"><img src="../assets/Photos/linkdin.png"
-            alt=""></a>
-        <div class="btns">
-          <a href="About.vue"><button>More about me</button></a>
-          <a href="Giorgi-Tolordava.pdf"><button>CV</button></a>
-        </div>
+        <a href="https://www.facebook.com/giorgi.tolordava.576786" target="_blank">
+          <img src="../assets/Photos/facebook.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/georgetolordava5/" target="_blank">
+          <img src="../assets/Photos/instagram.webp" alt="Instagram">
+        </a>
+        <a href="https://github.com/Tolordava5" target="_blank">
+          <img src="../assets/Photos/github.png" alt="GitHub">
+        </a>
+        <a href="https://www.linkedin.com/in/george-george-629411258/" target="_blank">
+          <img src="../assets/Photos/linkdin.png" alt="LinkedIn">
+        </a>
+      </div>
+      <div class="btns">
+        <a href="About.vue"><button class="primary-btn">More about me</button></a>
+        <a href="Giorgi-Tolordava.pdf"><button class="secondary-btn">CV</button></a>
       </div>
     </div>
-    <!-- last child -->
-    <div>
-      <img src="../assets/Photos/George.jpg" alt="">
+
+    <!-- Right Side -->
+    <div class="image-section">
+      <img src="../assets/Photos/George.jpg" alt="Giorgi Tolordava">
     </div>
   </div>
 </template>
 
+
+
 <style scoped>
+.information {
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: linear-gradient(to left, #161616, #1a1128);
+  align-items: center;
+  padding: 50px 30px;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
 h3 {
   font-size: 40px;
 }
@@ -35,40 +64,7 @@ h1 {
   font-size: 50px;
 }
 
-.inforamtion {
-  color: white;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: linear-gradient(to left, #161616, #1a1128);
-}
-
-.inforamtion div:first-child img {
-  width: 50px;
-  margin-right: 30px;
-}
-
-.inforamtion div:first-child {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 auto;
-  gap: 15px;
-  width: 400px;
-
-}
-
-.inforamtion h2 {
-  font-size: 42px;
-}
-
-.inforamtion>div:last-child img {
-  width: 500px;
-  border-radius: 50%;
-  margin-top: 50px;
-  margin-left: 100px;
-}
-
-#autoWriter {
+h2#autoWriter {
   font-size: 32px;
   color: white;
   white-space: nowrap;
@@ -76,78 +72,107 @@ h1 {
   border-right: 2px solid #A259FF;
   width: fit-content;
 }
-.btns{
+
+.social {
   display: flex;
-  gap: 30px;
+  align-items: center;
+  gap: 20px;
+  margin-top: 10px;
 }
-.btns > a:first-child > button{
+
+.social img {
+  width: 40px;
+  transition: transform 0.3s;
+}
+
+.social img:hover {
+  transform: scale(1.2);
+}
+
+.btns {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.primary-btn {
   background-color: #A259FF;
+  color: white;
   border: none;
   border-radius: 12px;
   width: 160px;
   height: 51px;
   cursor: pointer;
-  margin-top: 30px;
-  transition: 0.6s;
+  transition: 0.4s;
 }
 
-.btns > a:last-child > button {
+.secondary-btn {
   background: transparent;
-  border:  1px solid #A259FF;
+  border: 1px solid #A259FF;
+  color: white;
   width: 160px;
   height: 51px;
   border-radius: 12px;
-  transition: 0.6s;
-  margin-top: 30px;
-  color: white;
   cursor: pointer;
-
-
+  transition: 0.4s;
 }
 
-.social button:hover {
+.primary-btn:hover,
+.secondary-btn:hover {
   box-shadow: 0 0 10px #A259FF, 0 0 20px #A259FF;
 }
-@media  screen and (max-width:600px) {
-  .inforamtion{
+
+.image-section img {
+  width: 500px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 600px) {
+  .information {
     display: flex;
     flex-direction: column-reverse;
+    padding: 30px 15px;
+    gap: 40px;
   }
-.inforamtion > div:last-child> img {
-  width: 350px;
-  margin: 0 auto;
-  padding: 5px;
-  margin-left: 2px;
-  margin-top: 10px;
-}
-.inforamtion div{
-  padding: 10px;
-}
-.inforamtion h1{
-  font-size: 40px;
-}
-  .inforamtion h3{
-  font-size: 30px;
-}
-#autoWriter {
-  font-size: 30px;
-  color: white;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid #A259FF;
-  width: fit-content;
-}
-.btns {
-  width: 30px;
-  gap: 10px ;
-}
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  h2#autoWriter {
+    font-size: 26px;
+  }
+
+  .image-section img {
+    width: 320px;
+    margin-top: 10px;
+  }
+
+  .btns {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
 }
 </style>
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted } from 'vue';
+
 onMounted(() => {
   const element = document.getElementById('autoWriter');
-  const text = "And i am Web Developer...";
+  const text = "And I am Web Developer...";
   let index = 1;
   let isDeleting = false;
 
@@ -170,7 +195,7 @@ onMounted(() => {
     }
     setTimeout(type, isDeleting ? 70 : 120);
   }
+
   type();
 });
-
 </script>

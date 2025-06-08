@@ -47,7 +47,7 @@ nav {
   align-items: center;
   font-size: 30px;
   padding: 40px;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid white !important;
   justify-content: space-between;
 }
 
@@ -91,6 +91,7 @@ li a:hover {
 @media screen and (max-width:600px) {
   nav {
     display: none !important;
+
   }
 
   .mobile {
@@ -98,8 +99,8 @@ li a:hover {
     grid-template-columns: 1fr 1fr;
     background-color: transparent;
     padding: 20px;
-    gap: 10px;
     border-bottom: 1px solid white;
+    gap: 10px;
   }
   .mobile h3{
     display: flex;
@@ -141,6 +142,7 @@ li a:hover {
     transition: transform 0.3s ease;
   }
 }
+
 </style>
 
 <script setup>
